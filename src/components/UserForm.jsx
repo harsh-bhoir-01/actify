@@ -62,12 +62,12 @@ const UserForm = React.memo(() => {
             {/* Form */}
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               {/* Name */}
-              <div>
+              <div className=" w-full">
                 <label className="block text-sm font-medium">Name</label>
                 <input
                   type="text"
                   {...register("name", { required: "Name is required" })}
-                  className="mt-1 p-2 border border-gray-300/65 shadow-md rounded w-2xs"
+                  className="mt-1 p-2 border border-gray-300/65 shadow-md rounded w-full"
                 />
                 {errors.name && (
                   <span className="text-red-500 text-sm">
@@ -77,7 +77,7 @@ const UserForm = React.memo(() => {
               </div>
 
               {/* Age */}
-              <div>
+              <div className="w-full">
                 <label className="block text-sm font-medium">Age</label>
                 <input
                   type="number"
@@ -85,17 +85,17 @@ const UserForm = React.memo(() => {
                     required: "Age is required",
                     min: { value: 18, message: "Age must be at least 18" },
                   })}
-                  className="mt-1 p-2 border border-gray-300/65 shadow-md rounded w-2xs"
+                  className="mt-1 p-2 border border-gray-300/65 shadow-md rounded w-full"
                 />
                 {errors.age && (
-                  <span className="text-red-500 text-sm">
+                  <span className="block text-red-500 text-sm mt-1">
                     {errors.age.message}
                   </span>
                 )}
               </div>
 
               {/* Contact Number */}
-              <div>
+              <div className="w-full">
                 <label className="block text-sm font-medium">
                   Contact Number
                 </label>
@@ -108,7 +108,7 @@ const UserForm = React.memo(() => {
                       message: "Contact number must be 10 digits",
                     },
                   })}
-                  className="mt-1 p-2 border border-gray-300/65 shadow-md rounded w-xs"
+                  className="mt-1 p-2 border border-gray-300/65 shadow-md rounded w-full"
                 />
                 {errors.contactNumber && (
                   <span className="text-red-500 text-sm">
@@ -118,7 +118,7 @@ const UserForm = React.memo(() => {
               </div>
 
               {/* Gmail */}
-              <div>
+              <div className=" w-full">
                 <label className="block text-sm font-medium">Gmail</label>
                 <input
                   type="email"
@@ -129,7 +129,7 @@ const UserForm = React.memo(() => {
                       message: "Please enter a valid Gmail address",
                     },
                   })}
-                  className="mt-1 p-2 border border-gray-300/65 shadow-md rounded w-xs"
+                  className="mt-1 p-2 border border-gray-300/65 shadow-md rounded  w-full"
                 />
                 {errors.gmail && (
                   <span className="text-red-500 text-sm">
@@ -139,12 +139,12 @@ const UserForm = React.memo(() => {
               </div>
 
               {/* Place */}
-              <div>
+              <div className=" w-full">
                 <label className="block text-sm font-medium">Place</label>
                 <input
                   type="text"
                   {...register("place", { required: "Place is required" })}
-                  className="mt-1 p-2 border border-gray-300/65 shadow-md rounded w-xs"
+                  className="mt-1 p-2 border border-gray-300/65 shadow-md rounded  w-full"
                 />
                 {errors.place && (
                   <span className="text-red-500 text-sm">
@@ -154,14 +154,14 @@ const UserForm = React.memo(() => {
               </div>
 
               {/* Designation */}
-              <div>
+              <div className="w-full">
                 <label className="block text-sm font-medium">Designation</label>
                 <input
                   type="text"
                   {...register("designation", {
                     required: "Designation is required",
                   })}
-                  className="mt-1 p-2 border border-gray-300/65 shadow-md rounded w-xs"
+                  className="mt-1 p-2 border border-gray-300/65 shadow-md rounded w-full"
                 />
                 {errors.designation && (
                   <span className="text-red-500 text-sm">
