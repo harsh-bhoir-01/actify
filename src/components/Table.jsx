@@ -143,28 +143,28 @@ const Table = React.memo(() => {
         <button
           onClick={() => table.setPageIndex(0)}
           disabled={!table.getCanPreviousPage()}
-          className=" bg-gray-200/45 rounded text-sm px-2 "
+          className=" bg-gray-200/45 rounded text-sm px-2 cursor-pointer "
         >
           {"<<"}
         </button>
         <button
           onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
-          className=" bg-gray-200/45 rounded text-sm px-2"
+          className=" bg-gray-200/45 rounded text-sm px-2 cursor-pointer"
         >
           {"Previous"}
         </button>
         <button
           onClick={() => table.nextPage()}
           disabled={!table.getCanNextPage()}
-          className="bg-gray-200/45 rounded text-sm px-2"
+          className="bg-gray-200/45 rounded text-sm px-2 cursor-pointer"
         >
           {"Next"}
         </button>
         <button
           onClick={() => table.setPageIndex(table.getPageCount() - 1)}
           disabled={!table.getCanNextPage()}
-          className="bg-gray-200/45 text-sm rounded px-2"
+          className="bg-gray-200/45 text-sm rounded px-2 cursor-pointer"
         >
           {">>"}
         </button>

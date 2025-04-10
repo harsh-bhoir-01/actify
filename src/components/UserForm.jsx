@@ -46,7 +46,7 @@ const UserForm = React.memo(() => {
       {/* Button to show the form */}
       <button
         onClick={() => setIsFormVisible(!isFormVisible)}
-        className=" p-2 bg-blue-500 text-white rounded px-6 text-xs "
+        className=" p-2 bg-blue-500 text-white rounded px-6 text-xs cursor-pointer "
       >
         Add User
       </button>
@@ -170,7 +170,7 @@ const UserForm = React.memo(() => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="mt-4 p-2 bg-blue-500 text-white rounded text-sm"
+              className="mt-4 p-2 bg-blue-500 text-white rounded text-sm cursor-pointer"
             >
               Submit
             </button>
