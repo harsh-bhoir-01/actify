@@ -42,7 +42,7 @@ const UserForm = React.memo(() => {
   );
 
   return (
-    <div className=" w-full flex md:justify-end justify-center  my-4 ">
+    <div className=" w-full flex justify-end   my-4 ">
       <div className="font-serif  max-w-md px-4  ">
         {/* Button to show the form */}
         <div className="flex flex-wrap justify-center">
