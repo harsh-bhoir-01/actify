@@ -42,141 +42,147 @@ const UserForm = React.memo(() => {
   );
 
   return (
-    <div className=" font-serif w-md ml-6 my-4 md:relative top-12 ">
-      {/* Button to show the form */}
-      <button
-        onClick={() => setIsFormVisible(!isFormVisible)}
-        className=" p-2 bg-blue-500 text-white rounded px-6 text-xs cursor-pointer "
-      >
-        Add User
-      </button>
-
-      {/* Conditionally render the form */}
-      {isFormVisible && (
-        <div>
-          <h2 className=" font-semibold my-4 ">Add New User</h2>
-
-          {/* Form */}
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-            {/* Name */}
-            <div>
-              <label className="block text-sm font-medium">Name</label>
-              <input
-                type="text"
-                {...register("name", { required: "Name is required" })}
-                className="mt-1 p-2 border border-gray-300/65 shadow-md rounded w-2xs"
-              />
-              {errors.name && (
-                <span className="text-red-500 text-sm">
-                  {errors.name.message}
-                </span>
-              )}
-            </div>
-
-            {/* Age */}
-            <div>
-              <label className="block text-sm font-medium">Age</label>
-              <input
-                type="number"
-                {...register("age", {
-                  required: "Age is required",
-                  min: { value: 18, message: "Age must be at least 18" },
-                })}
-                className="mt-1 p-2 border border-gray-300/65 shadow-md rounded w-2xs"
-              />
-              {errors.age && (
-                <span className="text-red-500 text-sm">
-                  {errors.age.message}
-                </span>
-              )}
-            </div>
-
-            {/* Contact Number */}
-            <div>
-              <label className="block text-sm font-medium">
-                Contact Number
-              </label>
-              <input
-                type="number"
-                {...register("contactNumber", {
-                  required: "Contact Number is required",
-                  pattern: {
-                    value: /^[0-9]{10}$/,
-                    message: "Contact number must be 10 digits",
-                  },
-                })}
-                className="mt-1 p-2 border border-gray-300/65 shadow-md rounded w-xs"
-              />
-              {errors.contactNumber && (
-                <span className="text-red-500 text-sm">
-                  {errors.contactNumber.message}
-                </span>
-              )}
-            </div>
-
-            {/* Gmail */}
-            <div>
-              <label className="block text-sm font-medium">Gmail</label>
-              <input
-                type="email"
-                {...register("gmail", {
-                  required: "Gmail is required",
-                  pattern: {
-                    value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                    message: "Please enter a valid Gmail address",
-                  },
-                })}
-                className="mt-1 p-2 border border-gray-300/65 shadow-md rounded w-xs"
-              />
-              {errors.gmail && (
-                <span className="text-red-500 text-sm">
-                  {errors.gmail.message}
-                </span>
-              )}
-            </div>
-
-            {/* Place */}
-            <div>
-              <label className="block text-sm font-medium">Place</label>
-              <input
-                type="text"
-                {...register("place", { required: "Place is required" })}
-                className="mt-1 p-2 border border-gray-300/65 shadow-md rounded w-xs"
-              />
-              {errors.place && (
-                <span className="text-red-500 text-sm">
-                  {errors.place.message}
-                </span>
-              )}
-            </div>
-
-            {/* Designation */}
-            <div>
-              <label className="block text-sm font-medium">Designation</label>
-              <input
-                type="text"
-                {...register("designation", {
-                  required: "Designation is required",
-                })}
-                className="mt-1 p-2 border border-gray-300/65 shadow-md rounded w-xs"
-              />
-              {errors.designation && (
-                <span className="text-red-500 text-sm">
-                  {errors.designation.message}
-                </span>
-              )}
-            </div>
-
-            {/* Submit Button */}
-            <button
-              type="submit"
-              className="mt-4 p-2 bg-blue-500 text-white rounded text-sm cursor-pointer"
-            >
-              Submit
-            </button>
-          </form>
+    <div className=" w-full flex md:justify-end justify-center  my-4 ">
+      <div className="font-serif  max-w-md px-4  ">
+        {/* Button to show the form */}
+        <div className="flex flex-wrap justify-center">
+          <button
+            onClick={() => setIsFormVisible(!isFormVisible)}
+            className=" p-2 bg-blue-500 text-white rounded px-6 text-xs cursor-pointer "
+          >
+            Add User
+          </button>
         </div>
-      )}
+
+        {/* Conditionally render the form */}
+        {isFormVisible && (
+          <div>
+            <h2 className=" font-semibold my-4 ">Add New User</h2>
+
+            {/* Form */}
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+              {/* Name */}
+              <div>
+                <label className="block text-sm font-medium">Name</label>
+                <input
+                  type="text"
+                  {...register("name", { required: "Name is required" })}
+                  className="mt-1 p-2 border border-gray-300/65 shadow-md rounded w-2xs"
+                />
+                {errors.name && (
+                  <span className="text-red-500 text-sm">
+                    {errors.name.message}
+                  </span>
+                )}
+              </div>
+
+              {/* Age */}
+              <div>
+                <label className="block text-sm font-medium">Age</label>
+                <input
+                  type="number"
+                  {...register("age", {
+                    required: "Age is required",
+                    min: { value: 18, message: "Age must be at least 18" },
+                  })}
+                  className="mt-1 p-2 border border-gray-300/65 shadow-md rounded w-2xs"
+                />
+                {errors.age && (
+                  <span className="text-red-500 text-sm">
+                    {errors.age.message}
+                  </span>
+                )}
+              </div>
+
+              {/* Contact Number */}
+              <div>
+                <label className="block text-sm font-medium">
+                  Contact Number
+                </label>
+                <input
+                  type="number"
+                  {...register("contactNumber", {
+                    required: "Contact Number is required",
+                    pattern: {
+                      value: /^[0-9]{10}$/,
+                      message: "Contact number must be 10 digits",
+                    },
+                  })}
+                  className="mt-1 p-2 border border-gray-300/65 shadow-md rounded w-xs"
+                />
+                {errors.contactNumber && (
+                  <span className="text-red-500 text-sm">
+                    {errors.contactNumber.message}
+                  </span>
+                )}
+              </div>
+
+              {/* Gmail */}
+              <div>
+                <label className="block text-sm font-medium">Gmail</label>
+                <input
+                  type="email"
+                  {...register("gmail", {
+                    required: "Gmail is required",
+                    pattern: {
+                      value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                      message: "Please enter a valid Gmail address",
+                    },
+                  })}
+                  className="mt-1 p-2 border border-gray-300/65 shadow-md rounded w-xs"
+                />
+                {errors.gmail && (
+                  <span className="text-red-500 text-sm">
+                    {errors.gmail.message}
+                  </span>
+                )}
+              </div>
+
+              {/* Place */}
+              <div>
+                <label className="block text-sm font-medium">Place</label>
+                <input
+                  type="text"
+                  {...register("place", { required: "Place is required" })}
+                  className="mt-1 p-2 border border-gray-300/65 shadow-md rounded w-xs"
+                />
+                {errors.place && (
+                  <span className="text-red-500 text-sm">
+                    {errors.place.message}
+                  </span>
+                )}
+              </div>
+
+              {/* Designation */}
+              <div>
+                <label className="block text-sm font-medium">Designation</label>
+                <input
+                  type="text"
+                  {...register("designation", {
+                    required: "Designation is required",
+                  })}
+                  className="mt-1 p-2 border border-gray-300/65 shadow-md rounded w-xs"
+                />
+                {errors.designation && (
+                  <span className="text-red-500 text-sm">
+                    {errors.designation.message}
+                  </span>
+                )}
+              </div>
+
+              {/* Submit Button */}
+              <div className="flex flex-wrap justify-center">
+                <button
+                  type="submit"
+                  className=" mt-4 p-2 bg-blue-500 text-white rounded text-sm cursor-pointer"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        )}
+      </div>
     </div>
   );
 });

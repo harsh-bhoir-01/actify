@@ -84,7 +84,7 @@ const Table = React.memo(() => {
   return (
     <div className="font-serif px-5 pb-5 ">
       {/* Global Filter */}
-      <div className=" flex flex-wrap justify-center items-center space-x-6 my-4">
+      <div className=" flex flex-wrap justify-between space-x-6 my-4">
         <input
           type="text"
           value={globalFilter}

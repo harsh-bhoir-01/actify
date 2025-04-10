@@ -5,7 +5,7 @@ import UserForm from "./components/UserForm";
 
 const App = () => {
   return (
-    <div className=" w-full h-full  ">
+    <div className=" min-w-min h-full  ">
       <h1 className=" text-center font-serif my-3 text-4xl font-bold">
         User Table
       </h1>
