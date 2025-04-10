@@ -90,7 +90,7 @@ const Table = React.memo(() => {
           value={globalFilter}
           onChange={(e) => dispatch(setGlobalFilter(e.target.value))}
           placeholder="Search by name"
-          className=" placeholder:pl-3  placeholder:text-xs border rounded-md"
+          className=" placeholder:pl-3  placeholder:text-xs  border rounded-md"
         />
 
         {/* Export Button */}
@@ -104,7 +104,7 @@ const Table = React.memo(() => {
       {/* Table */}
       <div
         className=" 
-       text-[10px]  md:text-xs  xl:text-sm flex flex-wrap justify-center   "
+       text-[10px]  md:text-xs  xl:text-sm flex flex-wrap justify-center "
       >
         <table className=" table-auto w-full ">
           <thead>
@@ -113,7 +113,7 @@ const Table = React.memo(() => {
                 {headerGroup.headers.map((header) => (
                   <th
                     key={header.id}
-                    className="py-2 md:py-4 text-left border-b border-t bg-gray-300/30 cursor-pointer "
+                    className="p-2 md:py-4 text-left border-b border-t bg-gray-300/30 cursor-pointer "
                     onClick={header.column.getToggleSortingHandler()} // Toggle sorting when clicked
                   >
                     {header.column.columnDef.header}{" "}
@@ -129,7 +129,7 @@ const Table = React.memo(() => {
             {table.getRowModel().rows.map((row) => (
               <tr key={row.id}>
                 {row.getVisibleCells().map((cell) => (
-                  <td key={cell.id} className=" py-3 text-left border-t">
+                  <td key={cell.id} className=" p-2 text-left border-t">
                     {cell.getValue()}
                   </td>
                 ))}
@@ -139,7 +139,7 @@ const Table = React.memo(() => {
         </table>
       </div>
       {/* Pagination Controls */}
-      <div className=" flex justify-center space-x-2 ">
+      <div className=" flex justify-center space-x-2 my-4">
         <button
           onClick={() => table.setPageIndex(0)}
           disabled={!table.getCanPreviousPage()}
@@ -168,7 +168,7 @@ const Table = React.memo(() => {
         >
           {">>"}
         </button>
-        <span className="text-sm">
+        <span className="text-sm ">
           Page {table.getState().pagination.pageIndex + 1} of{" "}
           {table.getPageCount()}
         </span>
