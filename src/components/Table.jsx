@@ -96,7 +96,7 @@ const Table = React.memo(() => {
         {/* Export Button */}
         <button
           onClick={handleExport}
-          className=" p-2 text-xs bg-green-500 text-white rounded"
+          className=" p-2 text-xs bg-green-500 text-white rounded cursor-pointer"
         >
           Export to Excel
         </button>
